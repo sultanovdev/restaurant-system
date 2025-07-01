@@ -1,6 +1,7 @@
 package org.example.service;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import org.example.model.Food;
 import org.example.model.Order;
@@ -15,7 +16,7 @@ import static org.example.DB.DataSource.*;
 
 public class OrderService {
     public void service() {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Order order = new Order();
         for (Stole stole : stoles) {
             if (stole.getIsAviable().equals(false)) {
@@ -79,17 +80,18 @@ public class OrderService {
                             user.setTotalProfit(totalProfit);
                             order.setWaiterName(user.getName());
 
-//                            Type listType = new TypeToken<List<Order>>() {}.getType();
-//                            try{
-//                                BufferedReader bufferedReader = new BufferedReader(new FileReader("src/main/resources/history.json"));
-//                                List<Order> myList = gson.fromJson(bufferedReader,listType);
-//                                bufferedReader.close();
-//                            } catch (IOException e) {
-//                                throw new RuntimeException(e);
-//                            }
-
+                            Type listType = new TypeToken<List<Order>>() {}.getType();
+                            List<Order> myList = null;
+                            try{
+                                BufferedReader bufferedReader = new BufferedReader(new FileReader("src/main/resources/history.json"));
+                                myList = gson.fromJson(bufferedReader,listType);
+                                bufferedReader.close();
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                            myList.add(order);
                             try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src/main/resources/history.json"))){
-                                bufferedWriter.write(gson.toJson(order));
+                                bufferedWriter.write(gson.toJson(myList));
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }

@@ -1,1 +1,50 @@
-{"uuid":"0b96e949-2c09-4079-9a88-db3c583e904e","foodsName":[{"uuid":"628feb31-57f6-461b-8b97-41e0676e9c0b","name":"Somsa","price":8000.0}],"totalPrice":24000.0,"waiterName":"Kozim"}
+[
+  {
+    "uuid": "f0303f2f-440a-4037-8713-679db49ccd09",
+    "foodsName": [
+      {
+        "uuid": "333c3fe8-9e03-4ecd-aa23-37930ad3fe86",
+        "name": "Somsa",
+        "price": 8000.0
+      }
+    ],
+    "totalPrice": 16000.0,
+    "waiterName": "Kozim"
+  },
+  {
+    "uuid": "49f3ed9f-aca6-4957-9a65-307e2344b1dd",
+    "foodsName": [
+      {
+        "uuid": "333c3fe8-9e03-4ecd-aa23-37930ad3fe86",
+        "name": "Somsa",
+        "price": 8000.0
+      }
+    ],
+    "totalPrice": 8000.0,
+    "waiterName": "Vali"
+  },
+  {
+    "uuid": "22aeaf5e-3a99-4b66-ad5e-f57f5198444c",
+    "foodsName": [
+      {
+        "uuid": "f3a7f89d-59d6-45e8-9a8f-01ff7ffe6698",
+        "name": "Somsa",
+        "price": 8000.0
+      }
+    ],
+    "totalPrice": 32000.0,
+    "waiterName": "Kozim"
+  },
+  {
+    "uuid": "ecae5b2f-4905-4242-8b88-778b95de3044",
+    "foodsName": [
+      {
+        "uuid": "926f0e11-018a-47f1-b98d-b55a8c73fb0a",
+        "name": "Plov",
+        "price": 45000.0
+      }
+    ],
+    "totalPrice": 225000.0,
+    "waiterName": "Maqsud"
+  }
+]
